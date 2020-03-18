@@ -37,4 +37,11 @@ check docker ip on local host \
 
 ###### elk docker set-up : https://www.youtube.com/watch?v=PWUuyDrqvt0
 
+#### Building flask docker image
+
+[link](https://runnable.com/docker/python/dockerize-your-flask-application)
+
+If there's need to read other files in flask app, just name the path /app/filename (with condition of docker file dir named /app)
+
+
 
