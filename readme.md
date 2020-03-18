@@ -12,6 +12,7 @@ run new docker container \
 
 check docker \
 `docker ps -q`
+`docker pa -a`: see all the past dockers that is also exitted
 
 check docker logs and link \
 `docker logs <container-id>`
