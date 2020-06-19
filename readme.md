@@ -42,7 +42,30 @@ check docker ip on local host \
 
 [link](https://runnable.com/docker/python/dockerize-your-flask-application)
 
-If there's need to read other files in flask app, just name the path /app/filename (with condition of docker file dir named /app)
+build docker image \
+`sudo docker build -t {name}:latest .`
+
+run docker \
+`sudo docker run -d -p 5010:5010 {name}`
+
+to mount a host directory to docker container, and not rebuild container anytime with code changes \
+` docker run -d -p 5010:5010 --name credit-scoring --mount type=bind,source="$(pwd)",target=/app {name} apps.py`
+
+[Dockerfile command difference](https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/) \
+*CMD enables change of arg at runtime*
+
+
+Docker issues \
+python have some [encoding issue](https://stackoverflow.com/questions/27931668/encoding-problems-when-running-an-app-in-docker-python-java-ruby-with-u) with docker need to add below in Dockerfile
+```
+RUN apt-get clean && apt-get -y update && apt-get install -y locales && locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+```
+*update and install is not always needed unless locale error throw up*
+
+If there's need to read other files in flask app.py, just name the path /app/filename (with condition of docker file dir named /app)
 
 
 
