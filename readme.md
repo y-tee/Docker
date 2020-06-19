@@ -36,7 +36,7 @@ run docker compose \
 check docker ip on local host \
 `sudo docker-compose ps`
 
-###### elk docker set-up : https://www.youtube.com/watch?v=PWUuyDrqvt0
+elk docker set-up : https://www.youtube.com/watch?v=PWUuyDrqvt0
 
 #### Building flask docker image
 
@@ -54,7 +54,6 @@ to mount a host directory to docker container, and not rebuild container anytime
 [Dockerfile command difference](https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/) \
 *CMD enables change of arg at runtime*
 
-
 Docker issues \
 python have some [encoding issue](https://stackoverflow.com/questions/27931668/encoding-problems-when-running-an-app-in-docker-python-java-ruby-with-u) with docker need to add below in Dockerfile
 ```
@@ -67,5 +66,9 @@ ENV LC_ALL en_US.UTF-8
 
 If there's need to read other files in flask app.py, just name the path /app/filename (with condition of docker file dir named /app)
 
+#### Docker Volume and mount
+[Type of Persistant data in docker](https://stackoverflow.com/questions/47150829/what-is-the-difference-between-binding-mounts-and-volumes-while-handling-persist)
 
+#### Dockerfile and Docker-compose
+[Docker file builds docker image, while docker-compose specify config and orchestrate many docker containers](https://stackoverflow.com/questions/29480099/docker-compose-vs-dockerfile-which-is-better/45549372#45549372)
 
