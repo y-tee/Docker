@@ -55,13 +55,6 @@ to mount a host directory to docker container, and not rebuild container anytime
 ` docker run -d -p 5010:5010 --name credit-scoring --mount type=bind,source="$(pwd)",target=/app {name} apps.py` \
 `docker run -d -p 5010:5010 --name {container name} -v "$(pwd)":/app {image name}:latest apps.py`
 
-### Flask production with gunicorn and nginx
-[gunicorn and nginx with docker compose](https://medium.com/technonerds/a-production-grade-machine-learning-api-using-flask-gunicorn-nginx-and-docker-part-2-c69629199037)
-
-`docker-compose build` \
-`docker-compose up`
-
-
 [Dockerfile command difference](https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/) \
 *CMD enables change of arg at runtime*
 
@@ -76,6 +69,13 @@ ENV LC_ALL en_US.UTF-8
 *update and install is not always needed unless locale error throw up*
 
 If there's need to read other files in flask app.py, just name the path /app/filename (with condition of docker file dir named /app)
+
+### Flask production with gunicorn and nginx
+[gunicorn and nginx with docker compose](https://medium.com/technonerds/a-production-grade-machine-learning-api-using-flask-gunicorn-nginx-and-docker-part-2-c69629199037)
+
+`docker-compose build` \
+`docker-compose up`
+
 
 #### Docker Volume and mount
 [Type of Persistant data in docker](https://stackoverflow.com/questions/47150829/what-is-the-difference-between-binding-mounts-and-volumes-while-handling-persist)
