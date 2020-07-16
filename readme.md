@@ -52,7 +52,7 @@ run docker \
 `sudo docker run -d -p 5010:5010 {name}`
 
 to mount a host directory to docker container, and not rebuild container anytime with code changes \
-` docker run -d -p 5010:5010 --name credit-scoring --mount type=bind,source="$(pwd)",target=/app {name} apps.py`
+` docker run -d -p 5010:5010 --name credit-scoring --mount type=bind,source="$(pwd)",target=/app {name} apps.py` \
 `docker run -d -p 5010:5010 --name {container name} -v "$(pwd)":/app {image name}:latest apps.py`
 
 
