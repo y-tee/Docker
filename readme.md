@@ -20,6 +20,9 @@ check docker logs and link \
 docker copy to local \
 `docker cp <docker-id>:/home/jovyan/<filename> "<path>"`
 
+remove all docker container not running \
+`docker rm $(docker ps -a -q)`
+
 
 #### Spark Docker with jupyter: 
 https://medium.com/@suci/running-pyspark-on-jupyter-notebook-with-docker-602b18ac4494 \
@@ -50,6 +53,8 @@ run docker \
 
 to mount a host directory to docker container, and not rebuild container anytime with code changes \
 ` docker run -d -p 5010:5010 --name credit-scoring --mount type=bind,source="$(pwd)",target=/app {name} apps.py`
+`docker run -d -p 5010:5010 --name {container name} -v "$(pwd)":/app {image name}:latest apps.py`
+
 
 [Dockerfile command difference](https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/) \
 *CMD enables change of arg at runtime*
