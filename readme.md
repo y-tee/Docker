@@ -71,7 +71,8 @@ ENV LC_ALL en_US.UTF-8
 If there's need to read other files in flask app.py, just name the path /app/filename (with condition of docker file dir named /app)
 
 ### Flask production with gunicorn and nginx
-[gunicorn and nginx with docker compose](https://medium.com/technonerds/a-production-grade-machine-learning-api-using-flask-gunicorn-nginx-and-docker-part-2-c69629199037)
+[gunicorn and nginx with docker compose](https://medium.com/technonerds/a-production-grade-machine-learning-api-using-flask-gunicorn-nginx-and-docker-part-2-c69629199037) \
+*note that in gunicorn+flask container, because the entrypoint is not python, "if name==__main__" section will not run*
 
 `docker-compose build` \
 `docker-compose up`
