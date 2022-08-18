@@ -26,6 +26,9 @@ remove all docker container not running \
 access docker container \
 `docker exec -it <docker name> bash`
 
+remove all container that is stopped \
+`docker container prune`
+
 
 #### Spark Docker with jupyter: 
 https://medium.com/@suci/running-pyspark-on-jupyter-notebook-with-docker-602b18ac4494 \
